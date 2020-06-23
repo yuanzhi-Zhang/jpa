@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpa?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    user:
+      name: yuanZhi
+      password: 123456
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: c7ae0c2a7007f2b2b528
+            clientSecret: 12d8fbe5c1b27e7aba21d8b0c28f55d7d0e380b0
+            authorizeUrl: https://github.com/login/oauth/authorize
+            redirectUrl: http://localhost:8080/oauth2/callback
+            accessTokenUrl: https://github.com/login/oauth/access_token
+            userInfoUrl: https://api.github.com/user
+  mvc:
+    static-path-pattern: /**
+server:
+  servlet:
+    session:
+      timeout: 60
